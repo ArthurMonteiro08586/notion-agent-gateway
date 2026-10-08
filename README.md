@@ -30,7 +30,9 @@ POST /api/v3/getThreadTranscript      history fallback
 | Gemini 3.5/3.6/3.7 Flash | `vertex-gemini-*/grapefruit-zeppole` | low..high |
 | GPT-5.2/5.4/5.5/6 Astra, Fable 5/5.1 | см. model_registry.json | Business-gate |
 
-Business-only (isDisabled на free): GPT-6 Astra, Fable 5, Fable 5.1.
+**Business-gate ОБХОДИТСЯ:** isDisabled=true — только UI-флаг. Прямой slug в createAgentThread работает на free-аккаунте: GPT-6 Astra (orlando-quinn), Fable 5.1 (assam-chai), Fable 5 (acai-budino-high) — все verified 200 + ответ. Итого **39 моделей бесплатно**.
+
+**Web search:** Notion-агент имеет браузер-тул. `browserEnabled: true` в payload (шлюз: `"web_search": true` в теле запроса) → агент ищет в интернете и отвечает со ссылкой-сноской. Проверено: BTC price → `82,617.36 [binance.com]`.
 
 **Важно:** обычный httpx/curl получает `400 UserValidationError` на createAgentThread — Notion фильтрует по TLS-фингерпринту. Шлюз использует `curl_cffi` с `impersonate="chrome"`.
 

@@ -1,5 +1,13 @@
 # Changelog
 
+## v3.1.0 (2026-10-08)
+1. **Business-gate bypass** — GPT-6 Astra, Fable 5.1, Fable 5 работают на free-плане
+   (isDisabled = UI-only флаг). Прямой slug → createAgentThread 200 + ответ.
+   39 моделей вместо 36. Алиасы: gpt-6-astra/astra, fable-5.1/fable, fable-5.
+2. **Web search** — `browserEnabled: true` (payload) включает браузер-тул агента;
+   шлюз: `"web_search": true` в теле запроса / extra_body. Ответы со сносками [^url].
+   Verified: BTC price → 82,617.36 [binance.com].
+
 ## v3.0.0 (2026-10-08)
 Fixes from internal roast of v2:
 

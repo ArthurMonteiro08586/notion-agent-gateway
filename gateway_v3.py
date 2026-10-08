@@ -65,6 +65,10 @@ MODEL_MAP = {
     "deepseek-v4-flash": "baseten-deepseek-v4-flash", "deepseek-v4.1-flash": "baseten-deepseek-v4.1-flash",
     "glm-5.2": "baseten-glm-5.2", "glm-5.3": "baseten-glm-5.3", "glm": "baseten-glm-5.3",
     "glm-5.3-flash": "baseten-glm-5.3-flash", "grok-build-0.1": "xinomavro-cake",
+    # Business-gate models — verified WORKING on free plan (gate is client-side only):
+    "gpt-6-astra": "orlando-quinn", "astra": "orlando-quinn",
+    "fable-5.1": "assam-chai", "fable": "assam-chai",
+    "fable-5": "acai-budino-high",
 }
 REASONING_VALUES = ["none", "minimal", "low", "medium", "high", "xhigh", "max"]
 
@@ -162,7 +166,7 @@ def _classify(status, body):
         return AccountFault(f"rate-limited {status}")
     return TransientFault(f"http {status}: {body[:120]}")
 
-def agent_chat_stream(acc, prompt, model_slug, reasoning, timeout_s, on_delta):
+def agent_chat_stream(acc, prompt, model_slug, reasoning, timeout_s, on_delta, web_search=False):
     """Blocking (thread) generator-style chat: calls on_delta(text_so_far) per poll."""
     s = _session()
     cookies = _cookies(acc)
@@ -180,7 +184,7 @@ def agent_chat_stream(acc, prompt, model_slug, reasoning, timeout_s, on_delta):
         "content": [{"type": "text", "text": [[prompt]]}],
         "policies": {"approval_mode": "review_for_me"},
         "agentMemorySettings": {"useMemories": False, "excludeChatFromMemories": True},
-        "browserEnabled": False,
+        "browserEnabled": bool(web_search),
         "clientMessageId": str(uuid.uuid4()),
     }
     r = s.post(f"{NOTION_URL}/api/v3/createAgentThread", json=payload, headers=H, cookies=cookies)
@@ -294,6 +298,8 @@ async def chat(body: dict, request: Request):
     slug = MODEL_MAP[model]
     prompt = _build_prompt(body.get("messages", []))
     reasoning = str(body.get("reasoning_effort", "medium")).lower()
+    extra = body.get("extra_body") if isinstance(body.get("extra_body"), dict) else {}
+    web_search = bool(body.get("web_search") or body.get("browser") or extra.get("web_search") or extra.get("browser"))
     stream = bool(body.get("stream"))
     timeout_s = min(int(body.get("timeout_s", 300)), 600)
     rid = f"chatcmpl-{uuid.uuid4().hex[:24]}"
@@ -306,7 +312,7 @@ async def chat(body: dict, request: Request):
         def on_delta(text):
             loop.call_soon_threadsafe(q.put_nowait, text)
         return await loop.run_in_executor(
-            EXEC, agent_chat_stream, acc, prompt, slug, reasoning, timeout_s, on_delta)
+            EXEC, agent_chat_stream, acc, prompt, slug, reasoning, timeout_s, on_delta, web_search)
 
     async def _attempt(max_tries=3):
         last_err = "no accounts in pool"

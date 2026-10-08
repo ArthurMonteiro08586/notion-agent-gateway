@@ -63,6 +63,12 @@ curl -s http://127.0.0.1:3100/v1/chat/completions \
   -d '{"model":"opus-5.5","messages":[{"role":"user","content":"hi"}],"reasoning_effort":"high"}'
 ```
 
+## 4.5. Business-gate — это фейк + web search
+
+`getAvailableModels` помечает GPT-6 Astra / Fable 5 / Fable 5.1 как isDisabled=true (Business-only). Но gate живёт ТОЛЬКО в UI: прямой createAgentThread со слагом модели работает на free-аккаунте без единого дополнительного хедера. Все 3 verified: thread 200 + полный ответ. Единственный нюанс: у fable-5 slug должен быть `acai-budino-high` (суффикс -high обязателен), effort=high.
+
+Web search: `browserEnabled: true` включает браузер-тул агента — реальный поиск в интернете (entity kind=tool в транскрипте). Через шлюз: `"web_search": true` в теле /v1/chat/completions (или extra_body). Ответ приходит со сносками `[^url]`.
+
 ## 5. Подключение к IDE/агенту
 
 В любом OpenAI-совместимом клиенте:
