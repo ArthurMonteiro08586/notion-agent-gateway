@@ -1,0 +1,408 @@
+{
+ "omniberry-sundae": {
+  "name": "GPT-6.1 Sol",
+  "family": "openai",
+  "efforts": [
+   "none",
+   "low",
+   "medium",
+   "high",
+   "xhigh",
+   "max"
+  ],
+  "disabled": false
+ },
+ "orchid-muffin": {
+  "name": "GPT-5.6 Terra",
+  "family": "openai",
+  "efforts": [
+   "none",
+   "low",
+   "medium",
+   "high",
+   "xhigh",
+   "max"
+  ],
+  "disabled": false
+ },
+ "omodi": {
+  "name": "GPT-6 Luna",
+  "family": "openai",
+  "efforts": [
+   "none",
+   "low",
+   "medium",
+   "high",
+   "xhigh",
+   "max"
+  ],
+  "disabled": false
+ },
+ "albuquerque-quinn": {
+  "name": "Opus 5.5",
+  "family": "anthropic",
+  "efforts": [
+   "low",
+   "medium",
+   "high",
+   "xhigh",
+   "max"
+  ],
+  "disabled": false
+ },
+ "soursop-shortcake": {
+  "name": "Grok 4.6",
+  "family": "xai",
+  "efforts": [
+   "low",
+   "medium",
+   "high",
+   "xhigh"
+  ],
+  "disabled": false
+ },
+ "olive-jellyroll": {
+  "name": "GPT-5.6 Luna",
+  "family": "openai",
+  "efforts": [
+   "none",
+   "low",
+   "medium",
+   "high",
+   "xhigh",
+   "max"
+  ],
+  "disabled": false
+ },
+ "orange-mousse": {
+  "name": "GPT-5.6 Sol",
+  "family": "openai",
+  "efforts": [
+   "none",
+   "low",
+   "medium",
+   "high",
+   "xhigh",
+   "max"
+  ],
+  "disabled": false
+ },
+ "oatmeal-cookie": {
+  "name": "GPT-5.2",
+  "family": "openai",
+  "efforts": [
+   "medium",
+   "high"
+  ],
+  "disabled": false
+ },
+ "oval-kumquat-medium": {
+  "name": "GPT-5.4",
+  "family": "openai",
+  "efforts": [
+   "medium",
+   "high"
+  ],
+  "disabled": false
+ },
+ "opal-quince-medium": {
+  "name": "GPT-5.5",
+  "family": "openai",
+  "efforts": [
+   "medium",
+   "high"
+  ],
+  "disabled": false
+ },
+ "vertex-gemini-3.5-flash": {
+  "name": "Gemini 3.5 Flash",
+  "family": "gemini",
+  "efforts": [
+   "low",
+   "medium",
+   "high"
+  ],
+  "disabled": false
+ },
+ "vertex-gemini-3.6-flash": {
+  "name": "Gemini 3.6 Flash",
+  "family": "gemini",
+  "efforts": [
+   "minimal",
+   "low",
+   "medium",
+   "high"
+  ],
+  "disabled": false
+ },
+ "grapefruit-zeppole": {
+  "name": "Gemini 3.7 Flash",
+  "family": "gemini",
+  "efforts": [
+   "low",
+   "medium",
+   "high"
+  ],
+  "disabled": false
+ },
+ "almond-croissant-low": {
+  "name": "Sonnet 4.6",
+  "family": "anthropic",
+  "efforts": [
+   "low",
+   "medium",
+   "high",
+   "max"
+  ],
+  "disabled": false
+ },
+ "angel-cake-high": {
+  "name": "Sonnet 5",
+  "family": "anthropic",
+  "efforts": [
+   "none",
+   "low",
+   "medium",
+   "high"
+  ],
+  "disabled": false
+ },
+ "achira-donut": {
+  "name": "Sonnet 5.5",
+  "family": "anthropic",
+  "efforts": [
+   "low",
+   "medium",
+   "high",
+   "xhigh",
+   "max"
+  ],
+  "disabled": false
+ },
+ "amla-jam": {
+  "name": "Haiku 5.5",
+  "family": "anthropic",
+  "efforts": [
+   "none",
+   "low",
+   "medium",
+   "high",
+   "xhigh",
+   "max"
+  ],
+  "disabled": false
+ },
+ "avocado-froyo-medium": {
+  "name": "Opus 4.6",
+  "family": "anthropic",
+  "efforts": [
+   "medium"
+  ],
+  "disabled": false
+ },
+ "apricot-sorbet-high": {
+  "name": "Opus 4.7",
+  "family": "anthropic",
+  "efforts": [
+   "high"
+  ],
+  "disabled": false
+ },
+ "ambrosia-tart-high": {
+  "name": "Opus 4.8",
+  "family": "anthropic",
+  "efforts": [
+   "low",
+   "medium",
+   "high",
+   "max"
+  ],
+  "disabled": false
+ },
+ "agave-flan": {
+  "name": "Opus 5",
+  "family": "anthropic",
+  "efforts": [
+   "low",
+   "medium",
+   "high",
+   "max"
+  ],
+  "disabled": false
+ },
+ "oregon-grape-medium": {
+  "name": "GPT-5.4 Mini",
+  "family": "openai",
+  "efforts": [
+   "medium"
+  ],
+  "disabled": false
+ },
+ "otaheite-apple-medium": {
+  "name": "GPT-5.4 Nano",
+  "family": "openai",
+  "efforts": [
+   "medium"
+  ],
+  "disabled": false
+ },
+ "fireworks-kimi-k3": {
+  "name": "Kimi K3",
+  "family": "mystery",
+  "efforts": [
+   "low",
+   "high",
+   "max"
+  ],
+  "disabled": false
+ },
+ "baseten-deepseek-v4-pro": {
+  "name": "DeepSeek V4 Pro",
+  "family": "mystery",
+  "efforts": [
+   "none",
+   "minimal",
+   "low",
+   "medium",
+   "high",
+   "max",
+   "xhigh"
+  ],
+  "disabled": false
+ },
+ "baseten-deepseek-v4-flash": {
+  "name": "DeepSeek V4 Flash",
+  "family": "mystery",
+  "efforts": [
+   "none",
+   "minimal",
+   "low",
+   "medium",
+   "high",
+   "xhigh"
+  ],
+  "disabled": false
+ },
+ "baseten-deepseek-v4.1-flash": {
+  "name": "DeepSeek V4.1 Flash",
+  "family": "mystery",
+  "efforts": [
+   "none",
+   "low",
+   "high",
+   "max"
+  ],
+  "disabled": false
+ },
+ "baseten-glm-5.2": {
+  "name": "GLM 5.2",
+  "family": "mystery",
+  "efforts": [
+   "none",
+   "high",
+   "max"
+  ],
+  "disabled": false
+ },
+ "baseten-glm-5.3": {
+  "name": "GLM 5.3",
+  "family": "mystery",
+  "efforts": [
+   "low",
+   "high",
+   "max"
+  ],
+  "disabled": false
+ },
+ "baseten-glm-5.3-flash": {
+  "name": "GLM 5.3 Flash",
+  "family": "mystery",
+  "efforts": [
+   "low",
+   "high",
+   "max"
+  ],
+  "disabled": false
+ },
+ "xigua-mochi-medium": {
+  "name": "Grok 4.3",
+  "family": "xai",
+  "efforts": [
+   "low",
+   "medium",
+   "high"
+  ],
+  "disabled": false
+ },
+ "strawberry-whoopiepie": {
+  "name": "Grok 4.5",
+  "family": "xai",
+  "efforts": [
+   "low",
+   "medium",
+   "high"
+  ],
+  "disabled": false
+ },
+ "xinomavro-cake": {
+  "name": "Grok Build 0.1",
+  "family": "xai",
+  "efforts": [],
+  "disabled": false
+ },
+ "galette-medium-thinking": {
+  "name": "Gemini 3.1 Pro",
+  "family": "gemini",
+  "efforts": [
+   "low",
+   "medium"
+  ],
+  "disabled": false
+ },
+ "anthropic-haiku-4.5": {
+  "name": "Haiku 4.5",
+  "family": "anthropic",
+  "efforts": [],
+  "disabled": false
+ },
+ "gingerbread": {
+  "name": "Gemini 3 Flash",
+  "family": "gemini",
+  "efforts": [],
+  "disabled": false
+ },
+ "orlando-quinn": {
+  "name": "GPT-6 Astra",
+  "family": "openai",
+  "efforts": [
+   "low",
+   "medium",
+   "high",
+   "xhigh",
+   "max"
+  ],
+  "disabled": true
+ },
+ "assam-chai": {
+  "name": "Fable 5.1",
+  "family": "anthropic",
+  "efforts": [
+   "low",
+   "medium",
+   "high",
+   "max"
+  ],
+  "disabled": true
+ },
+ "acai-budino-high": {
+  "name": "Fable 5",
+  "family": "anthropic",
+  "efforts": [
+   "low",
+   "medium",
+   "high",
+   "max"
+  ],
+  "disabled": true
+ }
+}

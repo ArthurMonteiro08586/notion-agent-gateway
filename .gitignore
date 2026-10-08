@@ -1,0 +1,5 @@
+pool.json
+pool_test.json
+gw_key.txt
+*.log
+__pycache__/
