@@ -52,12 +52,12 @@ Internal slug Opus 5.5 = `albuquerque-quinn` (город+имя — схема N
 - Структура ответа: recordMap с ДВОЙНЫМ `value.value` — разворачивай дважды
 - Эндпоинт `www.notion.so` (НЕ .com — 404)
 
-## 4. Шлюз (gateway_v2.py)
+## 4. Шлюз (gateway_v3.py)
 
-FastAPI + **curl_cffi** (обязательно!). Round-robin по пулу 70 акков, cooldown битых 3 мин, stream-обёртка, reasoning_effort с per-model clamp. 36 моделей, алиасы: opus-5.5, sol, kimi, deepseek, glm...
+FastAPI + **curl_cffi** (обязательно!). v3: async endpoint, дельты транскрипта пушатся в SSE сразу как растут, unknown model → 404, AccountFault (401/403/429) → cooldown, TransientFault → ротация БЕЗ cooldown, usage честный (chars, токены Notion не отдаёт). Примечание: Notion присылает assistant_message целыми патчами — дельт мало на коротких ответах, это ограничение протокола, не шлюза.. Round-robin по пулу 70 акков, cooldown битых 3 мин, stream-обёртка, reasoning_effort с per-model clamp. 36 моделей, алиасы: opus-5.5, sol, kimi, deepseek, glm...
 
 ```bash
-PORT=3100 NOTION_GW_KEY=*** python gateway_v2.py
+PORT=3100 NOTION_GW_KEY=*** python gateway_v3.py
 curl -s http://127.0.0.1:3100/v1/chat/completions \
   -H "Authorization: Bearer ***" -H "Content-Type: application/json" \
   -d '{"model":"opus-5.5","messages":[{"role":"user","content":"hi"}],"reasoning_effort":"high"}'

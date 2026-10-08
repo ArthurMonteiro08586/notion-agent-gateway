@@ -40,7 +40,7 @@ Business-only (isDisabled на free): GPT-6 Astra, Fable 5, Fable 5.1.
 pip install fastapi uvicorn curl_cffi
 # 1) pool.json — массив аккаунтов (см. ниже)
 # 2) запуск
-PORT=3100 NOTION_GW_KEY=*** python gateway_v2.py
+PORT=3100 NOTION_GW_KEY=*** python gateway_v3.py
 # 3) запрос
 curl http://127.0.0.1:3100/v1/chat/completions \
   -H "Authorization: Bearer ***" -H "Content-Type: application/json" \
@@ -86,7 +86,11 @@ model    = opus-5.5
 ## Структура
 
 ```
-gateway_v2.py     — шлюз (FastAPI+curl_cffi, рабочий)
+gateway_v3.py     — шлюз v3 (async, real stream deltas, валидация моделей, efforts из registry, typed cooldown)
+gateway_v2.py     — шлюз v2 (рабочий, sync)
+smoke_test.py     — 6-чек тест шлюза (health/models/404/roundtrip/stream/401)
+requirements.txt  — зависимости (curl_cffi ОБЯЗАТЕЛЕН)
+CHANGELOG.md      — v1 (мёртвый httpx) → v2 (TLS bypass) → v3 (roast fixes)
 enrich_cell.py    — обогащение пула cell-hints
 model_registry.json — дамп 39 моделей getAvailableModels
 build_pool2.py    — сборщик pool.json из state-файлов фермы
